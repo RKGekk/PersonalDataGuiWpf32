@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0377D14-582B-48D2-8994-760C722936BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PersonalData.Repository.Model</RootNamespace>
+    <AssemblyName>PersonalData.Repository.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjects\DocumentSubject.cs" />
+    <Compile Include="BusinessObjects\Gender.cs" />
+    <Compile Include="BusinessObjects\IdentityDocument.cs" />
+    <Compile Include="BusinessObjects\MaritalStatus.cs" />
+    <Compile Include="BusinessObjects\Organization.cs" />
+    <Compile Include="BusinessObjects\Person.cs" />
+    <Compile Include="BusinessObjects\PhysicalCharacteristic.cs" />
+    <Compile Include="BusinessObjects\RoleRelation.cs" />
+    <Compile Include="BusinessObjects\Subject.cs" />
+    <Compile Include="BusinessObjects\SubjectName.cs" />
+    <Compile Include="BusinessObjects\SubjectRole.cs" />
+    <Compile Include="BusinessObjects\UserLogin.cs" />
+    <Compile Include="BusinessObjects\WebContent.cs" />
+    <Compile Include="BusinessObjects\WebContentRole.cs" />
+    <Compile Include="Dictionary\ITypeRepository.cs" />
+    <Compile Include="Dictionary\TypeCategory.cs" />
+    <Compile Include="Dictionary\TypeDigest.cs" />
+    <Compile Include="Dictionary\TypeDigestRelation.cs" />
+    <Compile Include="Dictionary\TypeTable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\ConstReference.cs" />
+    <Compile Include="Rules\ExpressionNode.cs" />
+    <Compile Include="Rules\OperationArgumentList.cs" />
+    <Compile Include="Rules\OperationNode.cs" />
+    <Compile Include="Rules\Reference.cs" />
+    <Compile Include="Rules\TypeReference.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModelAssistant\ModelAssistant.csproj">
+      <Project>{73e12c84-e7b3-4c23-809d-61fbcdf0706d}</Project>
+      <Name>ModelAssistant</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PersonalData34.vsdx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

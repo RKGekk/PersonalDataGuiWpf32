@@ -1,0 +1,35 @@
+﻿<Window x:Class="PersonalData.Gui.Wpf.PersonalDataManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalData.Gui.Wpf"
+        mc:Ignorable="d"
+        Title="PersonalDataManager" Height="450" Width="800">
+    <WrapPanel>
+        <Button x:Name="EmloyeeListButton" Margin="8" Padding="8" Width="128" Click="EmloyeeListButton_Click">
+            <StackPanel>
+                <Image Source="{StaticResource EmployeesListImage}" Width="64" Height="64"></Image>
+                <TextBlock>Employees List</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button x:Name="DepartmentsListButton" Margin="8" Padding="8" Width="128">
+            <StackPanel>
+                <Image Source="{StaticResource DepartmentListImage}" Width="64" Height="64"></Image>
+                <TextBlock>Departments List</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button x:Name="AddEmployeeButton" Margin="8" Padding="8" Width="128" Click="AddEmployeeButton_Click">
+            <StackPanel>
+                <Image Source="{StaticResource AddEmployeeImage}" Width="64" Height="64"></Image>
+                <TextBlock>Add Employee</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button x:Name="AddDepartmentButton" Margin="8" Padding="8" Width="128" Click="AddDepartmentButton_Click">
+            <StackPanel>
+                <Image Source="{StaticResource AddDepartmentImage}" Width="64" Height="64"></Image>
+                <TextBlock>Add Department</TextBlock>
+            </StackPanel>
+        </Button>
+    </WrapPanel>
+</Window>

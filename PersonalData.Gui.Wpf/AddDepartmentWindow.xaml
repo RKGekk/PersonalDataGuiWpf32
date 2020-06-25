@@ -1,0 +1,35 @@
+﻿<Window x:Class="PersonalData.Gui.Wpf.AddDepartmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalData.Gui.Wpf"
+        mc:Ignorable="d"
+        Title="AddDepartmentWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Department Name" Margin="4"></TextBlock>
+            <TextBox Text="{Binding DepartmentName}" Grid.Column="1" Grid.Row="0" MinWidth="256" Margin="4"></TextBox>
+
+        </Grid>
+
+        <Button Grid.Row="1" x:Name="AddDepartmentButton" Margin="32" Click="AddDepartmentButton_Click">Add Department</Button>
+    </Grid>
+</Window>

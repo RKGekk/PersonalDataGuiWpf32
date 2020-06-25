@@ -1,0 +1,239 @@
+﻿<Window x:Class="PersonalData.Gui.Wpf.TypeDigestInsertWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalData.Gui.Wpf"
+        mc:Ignorable="d"
+        Title="TypeDigestInsertWindow" Height="450" Width="800">
+    <Grid x:Name="MainGrid" Loaded="MainGrid_Loaded">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="4">Status</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="1" Margin="4">Param Name</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="2" Margin="4">Enter Value Here</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="3" Margin="4">Tools</TextBlock>
+
+            <Ellipse x:Name="EllopseParentId" Grid.Row="1" Grid.Column="0" Width="16" Height="16" Fill="Gray"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="4">
+                <TextBlock.Text>idParent</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>id of parent type</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox x:Name="TextBoxIdParent" Grid.Row="1" Grid.Column="2" Text="{Binding Path=ParentId, TargetNullValue=''}" Margin="4" MinWidth="192"></TextBox>
+            <StackPanel Grid.Row="1" Grid.Column="3" Orientation="Horizontal" Margin="4">
+                <Button Margin="0,0,4,0">
+                    <Button.ToolTip>Search id</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/SearchIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <Button Margin="0,0,4,0" Click="ButtonParentIdCheck_Click">
+                    <Button.ToolTip>Check id</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/CheckIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <TextBlock x:Name="TextBlockIdParent"></TextBlock>
+            </StackPanel>
+
+            <Ellipse x:Name="EllipseIdTypeCategory" Grid.Row="2" Grid.Column="0" Width="16" Height="16" Fill="Gray"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="4">
+                <TextBlock.Text>idTypeCategory</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>id of type category</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox x:Name="TextBoxTypeCategoryId" Grid.Row="2" Grid.Column="2" Text="{Binding Path=TypeCategoryId, TargetNullValue=''}" Margin="4" MinWidth="192"></TextBox>
+            <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" Margin="4">
+                <Button Margin="0,0,4,0">
+                    <Button.ToolTip>Search id</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/SearchIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <Button Margin="0,0,4,0">
+                    <Button.ToolTip>Add Category</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/PlusIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <Button Margin="0,0,4,0" Click="ButtonCategoryIdCheck_Click">
+                    <Button.ToolTip>Check id</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/CheckIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <TextBlock x:Name="TextBlockidTypeCategory"></TextBlock>
+            </StackPanel>
+
+            <Ellipse x:Name="EllipseCode" Grid.Row="3" Grid.Column="0" Width="16" Height="16" Fill="Gray" Margin="4"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Margin="4">
+                <TextBlock.Text>sCode</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>unique type code</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox x:Name="TextBoxCode" Grid.Row="3" Grid.Column="2" Text="{Binding Path=Code}" Margin="4" MinWidth="192"></TextBox>
+            <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Horizontal" Margin="4">
+                <Button Margin="0,0,4,0" Click="Button_Click">
+                    <Button.ToolTip>check uniqueness</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/CheckIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <TextBlock x:Name="TextBlockCode"></TextBlock>
+            </StackPanel>
+
+            <TextBlock Grid.Row="4" Grid.Column="1" Margin="4">
+                <TextBlock.Text>sBCode</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>business friendly code</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding Path=BCode}" Margin="4" MinWidth="192"></TextBox>
+
+            <TextBlock Grid.Row="5" Grid.Column="1" Margin="4">
+                <TextBlock.Text>sName</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>descriptive type name</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding Path=Name}" Margin="4" MinWidth="192"></TextBox>
+
+            <Ellipse x:Name="EllipseTableId" Grid.Row="6" Grid.Column="0" Width="16" Height="16" Fill="Gray" Margin="4"/>
+            <TextBlock Grid.Row="6" Grid.Column="1" Margin="4">
+                <TextBlock.Text>idTypeTable</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>id of descriptions for related table</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox x:Name="TextBoxTableId" Grid.Row="6" Grid.Column="2" Text="{Binding Path=TypeTableId, TargetNullValue=''}" Margin="4" MinWidth="192"></TextBox>
+            <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Horizontal" Margin="4">
+                <Button Margin="0,0,4,0">
+                    <Button.ToolTip>Search id</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/SearchIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <Button Margin="0,0,4,0">
+                    <Button.ToolTip>Add Type Table Definition</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/PlusIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <Button Margin="0,0,4,0" Click="ButtonTableIdCheck_Click">
+                    <Button.ToolTip>Check id</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/CheckIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <TextBlock x:Name="TextBlockTableId"></TextBlock>
+            </StackPanel>
+
+            <TextBlock Grid.Row="7" Grid.Column="1" Margin="4">
+                <TextBlock.Text>sNote</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>arbitrary type description</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding Path=Note}" Margin="4" MinWidth="192"></TextBox>
+
+            <TextBlock Grid.Row="8" Grid.Column="1" Margin="4">
+                <TextBlock.Text>sOpen</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>type valid from</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            
+            <DatePicker x:Name="TextBoxOpenDate" Grid.Row="8" Grid.Column="2" Text="{Binding Path=Open }" Margin="4" MinWidth="192"></DatePicker>
+            <StackPanel Grid.Row="8" Grid.Column="3" Orientation="Horizontal" Margin="4">
+                <Button Margin="0,0,4,0" Click="ButtonOpenDateToday_Click">
+                    <Button.ToolTip>Today</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/DownArrowIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+
+            <TextBlock Grid.Row="9" Grid.Column="1" Margin="4">
+                <TextBlock.Text>dClose</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>type valid until</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <DatePicker Grid.Row="9" Grid.Column="2" Text="{Binding Path=Close}" Margin="4" MinWidth="192"></DatePicker>
+            <StackPanel Grid.Row="9" Grid.Column="3" Orientation="Horizontal" Margin="4">
+                <Button Margin="0,0,4,0" Click="ButtonCloseDateToday_Click">
+                    <Button.ToolTip>Today</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/DownArrowIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+                <Button Margin="0,0,4,0" Click="ButtonCloseDateEnd_Click">
+                    <Button.ToolTip>Max Date</Button.ToolTip>
+                    <Button.Content>
+                        <Image Source="Images/UpArrowIcon.png" Height="16" Width="16"></Image>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+
+            <TextBlock Grid.Row="10" Grid.Column="1" Margin="4">
+                <TextBlock.Text>iOrder</TextBlock.Text>
+                <TextBlock.ToolTip>
+                    <ToolTip>
+                        <TextBlock>any number for sorting</TextBlock>
+                    </ToolTip>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox Grid.Row="10" Grid.Column="2" Text="{Binding Path=Order}" Margin="4" MinWidth="192"></TextBox>
+
+        </Grid>
+
+        <Button Grid.Row="1" Margin="32" Click="ButtonAddToDB_Click">Add Type To DataBase</Button>
+    </Grid>
+</Window>
